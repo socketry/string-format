@@ -6,8 +6,9 @@
 module String::Format
 	# Format multiple statistics into a compact string.
 	# @parameter pairs [Hash] Hash of statistic names to values or [current, total] arrays.
+	# @parameter short [Boolean] Whether to use short keys (first letter only).
 	# @returns [String] A formatted statistics string.
-	def statistics(**pairs)
+	def statistics(pairs, short: true)
 		pairs.map do |key, value|
 			case value
 			when Array
@@ -16,7 +17,13 @@ module String::Format
 				value = count(value)
 			end
 			
-			"#{key.to_s.upcase}=#{value}"
+			if short
+				key = key.to_s[0].upcase
+			else
+				key = key.to_s.upcase
+			end
+			
+			"#{key}=#{value}"
 		end.join(" ")
 	end
 	
