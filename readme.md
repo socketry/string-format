@@ -14,7 +14,13 @@ Please see the [project documentation](https://socketry.github.io/string-format/
 
 Please see the [project releases](https://socketry.github.io/string-format/releases/index) for all releases.
 
+### v0.2.0
+
+  - `String::Format.statistics` takes pairs argument instead of keyword argument.
+
 ### v0.1.0
+
+  - Initial release.
 
 ## Contributing
 
